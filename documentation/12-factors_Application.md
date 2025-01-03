@@ -1,10 +1,10 @@
 # 12-Factor App
 
 1. **Codebase**  
-   **Explanation:**
+   🌟**Explanation:**
    One codebase tracked in revision control, many deploys.
    
-   ❤️<span style="color:orange;">**What We Did:**</span>
+   :rocket:**What We Did:**
    We created Docker images for both the front end and back end, so they can be deployed anywhere.
 
 

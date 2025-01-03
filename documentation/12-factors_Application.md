@@ -2,6 +2,7 @@
 
 1. **Codebase**  
    One codebase tracked in revision control, many deploys.
+   
    **What We Did:**
    We created Docker images for both the front end and back end, so they can be deployed anywhere.
 

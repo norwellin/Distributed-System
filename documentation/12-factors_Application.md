@@ -2,38 +2,41 @@
 
 1. **Codebase**  
    One codebase tracked in revision control, many deploys.
+   - ## What We Did:
+   We created Docker images for both the front end and back end, so they can be deployed anywhere.
 
-2. **Dependencies**  
+
+3. **Dependencies**  
    Explicitly declare and isolate dependencies.
 
-3. **Config**  
+4. **Config**  
    Store config in the environment.
 
-4. **Backing services**  
+5. **Backing services**  
    Treat backing services as attached resources.
 
-5. **Build, release, run**  
+6. **Build, release, run**  
    Strictly separate build and run stages.
 
-6. **Processes**  
+7. **Processes**  
    Execute the app as one or more stateless processes.
 
-7. **Port binding**  
+8. **Port binding**  
    Export services via port binding.
 
-8. **Concurrency**  
+9. **Concurrency**  
    Scale out via the process model.
 
-9. **Disposability**  
+10. **Disposability**  
    Maximize robustness with fast startup and graceful shutdown.
 
-10. **Dev/prod parity**  
+11. **Dev/prod parity**  
     Keep development, staging, and production as similar as possible.
 
-11. **Logs**  
+12. **Logs**  
     Treat logs as event streams.
 
-12. **Admin processes**  
+13. **Admin processes**  
     Run admin/management tasks as one-off processes.
 
 ####Reference

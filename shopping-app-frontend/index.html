@@ -1,0 +1,28 @@
+<!doctype html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="./css/style.css">
+          </head>
+          <body><body><ion-tabs id="icjkb"><ion-tab tab="tab-schedule"><ion-content color="light" id="i08eh"><productlist id="iedhx"> <ion-app id="iioi"><ion-content color="light" id="ibwd"><div v-if="store[0]" class="header-container"><div class="column"><img loading="lazy" :src="store[0].logo" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2ac4a807142e440307c36c54217ee54389bd621c341216fe5d11b392ff3d5c5?apiKey=b3cd0fb356fa4ff599608fc54d0ec7fc&" class="img"/></div><div class="column-2"><div class="market-info"><h1 class="market-name">{{store[0].name}}</h1><button type="button" v-on:click="goToStoreEdit()" class="edit-btn">Edit</button></div><div class="preview-share"><button type="button" class="preview-btn header-btn">PREVIEW</button><button type="button" class="share-btn header-btn">SHARE</button></div></div></div><div class="product-header-container"><div class="product-list-total"><div class="product-list">Product List</div><div class="product-total">Total: {{numProduct}} products</div></div><button type="button" v-on:click="create()" class="product-btn">Add+</button></div><div v-for="(product_row, product_index) of product" class="product-container"><div class="product-info"><img loading="lazy" :src="product_row.image" src="https://iotapp.ttu.edu.tw/ionic-project/pchung/creatAppApk/plugins/cordova-plugin-qrscanner/tests/project/resources/Default@2x~universal~anyany.png" class="product-image"/><div class="product-name-price"><div class="product-name">{{product_row.name}}</div><div class="product-price">$ {{product_row.price}}</div></div></div><div class="edit-section"><button type="button" v-on:click="update(product_row)" class="product-btn">Edit</button><button type="button" v-on:click="del(product_row.id)" class="product-btn">Del</button></div></div><!-- <ion-item id="i4g97" v-for="(product_row, product_index) of product">
+                <ion-label id="i47rc">{{product_index+1}}. {{product_row.name}}
+                </ion-label>
+                <ion-btn color="primary" id="if9rg" v-on:click="update(product_row)">編輯
+                </ion-btn>
+                <ion-btn color="primary" id="iu5vb" v-on:click="del(product_row.id)">移除
+                </ion-btn>
+            </ion-item>
+            </ion-item-group> --></ion-content></ion-app> </productlist></ion-content></ion-tab><ion-tab tab="tab-speaker"><ion-content color="light" id="i1kye"><orders id="ifp58x"> orders.vue 
+        </orders></ion-content></ion-tab><ion-tab tab="tab-about"><ion-content color="light" id="i0dvwf"></ion-content></ion-tab><ion-tab-bar slot="bottom"><ion-tab-button tab="tab-schedule" id="ir6dh"><ion-icon name="pricetags-outline" id="igcs1l">
+        </ion-icon><ion-label id="ivokr3">Products
+        </ion-label></ion-tab-button><ion-tab-button tab="tab-speaker" id="i9yxns"><ion-icon name="cube-outline" id="i7wg1m">
+        </ion-icon><ion-label id="irvjxl">Orders
+        </ion-label></ion-tab-button><ion-tab-button tab="tab-about" id="iji4ea"><ion-icon name="information-circle">
+        </ion-icon><ion-label id="ih44a">About
+        </ion-label></ion-tab-button></ion-tab-bar></ion-tabs></body><script>var items = document.querySelectorAll('#i08eh, #ibwd, #i1kye, #i0dvwf');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+let m=null,p=null;function e(){null!=m&&m.forEach(e=>{e.removeEventListener("load",c)}),(p=null)&&p.forEach(e=>{e.removeEventListener("ionImgDidLoad",c)});var e=document.querySelector("ion-content");if(null!==e){let t=0,n=0,a=e.children;for(let e=0;e<a.length;e++){var i,o=a[e],d=window.getComputedStyle(o),l=parseFloat(d.marginTop),d=parseFloat(d.marginBottom),o=o.offsetHeight;0<e?(i=Math.max(n,l),t+=o+i):t+=o+l,n=d}var r=t,s=e.clientHeight;0==s?e.style.setProperty("--overflow","auto"):s<r?e.style.setProperty("--overflow","scroll"):e.style.setProperty("--overflow","hidden"),(m=e.querySelectorAll("img")).forEach(e=>{e.complete?console.log("圖片已經載入完成"):e.addEventListener("load",c)}),(p=e.querySelectorAll("ion-img")).forEach(e=>{e.addEventListener("ionImgDidLoad",c)})}}let t;function n(){clearTimeout(t),t=setTimeout(()=>{e()},100)}function c(){n()}document.addEventListener("DOMContentLoaded",e),window.addEventListener("resize",e);var a=document.querySelector("ion-content");null!==a&&(new ResizeObserver(e).observe(a),new MutationObserver(()=>{console.log("MutationObserver"),n()}).observe(a,{childList:!0,characterData:!0,subtree:!0}))
+}.bind(items[i]))();
+          }</script></body>
+        </html>

@@ -4,7 +4,7 @@
    **Explanation:**
    One codebase tracked in revision control, many deploys.
    
-   <span style="color: blue;">**What We Did:**
+   ❤️<span style="color:orange;">**What We Did:**</span>
    We created Docker images for both the front end and back end, so they can be deployed anywhere.
 
 

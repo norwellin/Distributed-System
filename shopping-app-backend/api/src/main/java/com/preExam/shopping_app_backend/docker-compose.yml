@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+ frontend:
+ build:
+ context: ./shopping-app-frontend
+
+ports:
+- "8000:8000"
+environement:
+- BACKEND_URL=http://backend:8080/api/shopping
+depends_on:
+- backend
+
+backend:
+build:
+conetxt: ./shopping_backend
+ports:
+- "8000:8000"

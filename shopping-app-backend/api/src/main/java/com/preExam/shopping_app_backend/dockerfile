@@ -1,0 +1,14 @@
+# Base Image
+FROM openjdk:17-jdk-slim
+
+# Set Work directory
+WORKDIR /app
+
+# Copy the JAR file built with Maven/Gradle
+COPY target/shopping-backend-0.0.1-SNAPSHOT.JAR app.JAR
+
+# Expose port
+EXPOSE 8080
+
+# Command to run the application
+CMD ["java","-jar","app.jar"]

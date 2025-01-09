@@ -9,24 +9,25 @@
 
 
 2. **Dependencies**
+
    🌟**Explanation:**
    Explicitly declare and isolate dependencies.
-
-   
+ 
    :rocket:**What We Did:**
    All the dependencies are put int the package.json
 
 3. **Config**  
+
    🌟**Explanation:**
    Store config in the environment.
 
    :rocket:**What We Did:**
    We store our config in the .env file at the root directory of the shopping-app-frontend.
 
-4. **Backing services** 
+4. **Backing services**
+5. 
    🌟**Explanation:** 
    Treat backing services as attached resources.
-
    
    :rocket:**What We Did:**
    We implemented the API call separately in #apiServer.js, and since it currently relies on the axios library, it will be easier to modify in the future.

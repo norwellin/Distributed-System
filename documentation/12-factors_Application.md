@@ -11,6 +11,7 @@
 2. **Dependencies**
    🌟**Explanation:**
    Explicitly declare and isolate dependencies.
+
    
    :rocket:**What We Did:**
    All the dependencies are put int the package.json
@@ -25,6 +26,7 @@
 4. **Backing services** 
    🌟**Explanation:** 
    Treat backing services as attached resources.
+
    
    :rocket:**What We Did:**
    We implemented the API call separately in #apiServer.js, and since it currently relies on the axios library, it will be easier to modify in the future.

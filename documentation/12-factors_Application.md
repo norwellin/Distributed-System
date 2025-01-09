@@ -25,7 +25,7 @@
    We store our config in the .env file at the root directory of the shopping-app-frontend.
 
 4. **Backing services**
-5. 
+   
    🌟**Explanation:** 
    Treat backing services as attached resources.
    

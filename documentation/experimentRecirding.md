@@ -5,6 +5,9 @@
 
    
 ****Optional (Upload to docker hub)****
-1. docker login
+1. docker login -u [your username]
 2. docker tag [name of your docker image] [username: docker hub]/[name of your docker image] (docker tag norwell-backendimage norwell/norwell-backendimage)
 3. docker push [username: docker hub]/[name of your docker image] (docker push norwell/norwell-backendimage)
+
+****Notes:****
+Before all of these, you have to create a new repository in your account (My repository name: norwell/norwell-backendimage)

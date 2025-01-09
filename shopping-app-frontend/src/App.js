@@ -75,13 +75,11 @@ function App() {
   const handleDeleteItem = async () => {
     try {
       const response = await deleteItem(deleteName);
-      if (response.status === 200) {
-        fetchItems();
-        setDeleteName("");
-        setError(null);
-      } else {
-        setError("Failed to delete item. Unexpected response status.");
-      }
+      
+      fetchItems();
+      setDeleteName("");
+      setError(null);
+      
     } catch (err) {
       if (err.response) {
         const statusCode = err.response.status;

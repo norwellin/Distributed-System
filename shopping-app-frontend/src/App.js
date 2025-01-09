@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { getItems, addItem, toupdateItem, deleteItem } from "./apiService";
 
-const API_BASE_URL = "https://urban-fiesta-q7w7rvpg565f4gpp-8080.app.github.dev/api/shoppingItems";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -13,9 +12,11 @@ function App() {
   // Fetch all shopping items
   const fetchItems = async () => {
     try {
-      const response = await axios.get(API_BASE_URL);
-      setItems(response.data);
-      setError(null);
+      const response = await getItems();
+      if (response.status === 200){
+        setItems(response.data);
+        setError(null);
+      }
     } catch (err) {
       setError("Failed to fetch items");
     }
@@ -24,39 +25,76 @@ function App() {
   // Add a new shopping item
   const handleAddItem = async () => {
     try {
-      await axios.post(API_BASE_URL, newItem);
-      fetchItems();
-      setNewItem({ name: "", amount: 0 });
-      setError(null);
+      const response = await addItem(newItem);
+      if (response.status === 201) {
+        fetchItems();
+        setNewItem({ name: "", amount: 0 });
+        setError(null);
+      } else {
+        setError("Failed to add item. Unexpected response status.");
+      }
     } catch (err) {
-      setError("Failed to add item");
+      if (err.response) {
+        const statusCode = err.response.status;
+        if (statusCode === 400) {
+          setError("Invalid input data. Please check the item details.");
+        } else {
+          setError(`Failed to add item. Error: ${statusCode}`);
+        }
+      } else {
+        setError("Failed to add item.");
+      }
     }
   };
 
-  // Update an existing shopping item
-  const handleUpdateItem = async () => {
-    try {
-      await axios.put(`${API_BASE_URL}/${updateItem.name}`, updateItem);
+ // Update an existing shopping item
+ const handleUpdateItem = async () => {
+  try {
+    const response = await toupdateItem(updateItem.name, updateItem);
+    if (response.status === 200) {
       fetchItems();
       setUpdateItem({ name: "", amount: 0 });
       setError(null);
-    } catch (err) {
-      setError("Failed to update item");
+    } else {
+      setError("Failed to update item. Unexpected response status.");
+    }
+  } catch (err) {
+      if (err.response) {
+        const statusCode = err.response.status;
+        if (statusCode === 404) {
+          setError("Item not found to update.");
+        } else {
+          setError(`Failed to update item. Error: ${statusCode}`);
+        }
+      } else {
+        setError("Failed to update item.");
+      }
     }
   };
 
-  // Delete a shopping item by name
   const handleDeleteItem = async () => {
     try {
-      await axios.delete(`${API_BASE_URL}/${deleteName}`);
-      fetchItems();
-      setDeleteName("");
-      setError(null);
+      const response = await deleteItem(deleteName);
+      if (response.status === 200) {
+        fetchItems();
+        setDeleteName("");
+        setError(null);
+      } else {
+        setError("Failed to delete item. Unexpected response status.");
+      }
     } catch (err) {
-      setError("Failed to delete item");
+      if (err.response) {
+        const statusCode = err.response.status;
+        if (statusCode === 404) {
+          setError("Item not found to delete.");
+        } else {
+          setError(`Failed to delete item. Error: ${statusCode}`);
+        }
+      } else {
+        setError("Failed to delete item.");
+      }
     }
   };
-
   useEffect(() => {
     fetchItems();
   }, []);

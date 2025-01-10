@@ -12,6 +12,7 @@ This is the front-end implementation for the Pre Exam Project in the Distributed
 2. Input:`docker run --name mydbimage -p 5432:5432 norwell/norwell-dbimage`
 
 **Third: Set up backend**
+
 There is still some problem with the backend image, so please use the local file first
 1. Input: `cd shopping-app-backend`
 2. Input: `mvn spring-boot:run`
